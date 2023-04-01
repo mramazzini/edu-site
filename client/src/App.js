@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Auth from "./components/utils/auth";
-
+import "./styles/App.css";
 import {
   ApolloClient,
   InMemoryCache,
