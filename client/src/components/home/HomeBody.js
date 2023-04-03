@@ -1,5 +1,5 @@
 import React from "react";
-
+import Banner from "./Banner";
 const HomeBody = () => {
   return (
     <div className="home-body">
@@ -33,6 +33,9 @@ const HomeBody = () => {
           <div className="main-banner-header">What is True Technicalities?</div>
           <div className="main-banner-body"></div>
         </div>
+        <Banner index={0} />
+        <Banner index={1} />
+        <Banner index={2} />
       </div>
     </div>
   );
