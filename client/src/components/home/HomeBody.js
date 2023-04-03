@@ -11,10 +11,10 @@ const HomeBody = () => {
             <span className="header-body">Let me teach you</span>
             <div className="get-started-nav">
               <a href="/">
-                <button>Contact</button>
+                <button className="home-button">Contact</button>
               </a>
               <a href="/">
-                <button>Learn more</button>
+                <button className="home-button">Learn more</button>
               </a>
             </div>
           </header>
