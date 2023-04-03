@@ -4,6 +4,7 @@ import { LOGIN } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
 import Auth from "../utils/auth";
+import Navbar from "../Navbar";
 const LoginComponent = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login] = useMutation(LOGIN);
@@ -37,13 +38,14 @@ const LoginComponent = () => {
   };
   return (
     <div className="login-container">
+      <Navbar />
       <h2>Login</h2>
       <form className="login-form" onSubmit={handleSubmit}>
-        <label htmlFor="email">Username/Email</label>
+        <label htmlFor="email">Email</label>
         <input
           onChange={handleChange}
           type=""
-          placeholder="Username/Email"
+          placeholder="example@email.com"
           id="email"
           name="email"
         />

@@ -5,6 +5,7 @@ import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Register.css";
+import Navbar from "../Navbar";
 const RegisterComponent = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [addUser] = useMutation(ADD_USER);
@@ -42,9 +43,10 @@ const RegisterComponent = () => {
   };
 
   return (
-    <div className="register-container">
+    <div className="login-container">
+      <Navbar />
       <h2>Register</h2>
-      <form className="register-form" onSubmit={handleSubmit}>
+      <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input
           onChange={handleChange}
@@ -57,7 +59,7 @@ const RegisterComponent = () => {
         <input
           onChange={handleChange}
           type="password"
-          placeholder="*********"
+          placeholder="********"
           id="password"
           name="password"
         />
