@@ -1,41 +1,90 @@
-import React from "react";
-import Banner from "./Banner";
+import React, { useEffect, useState, useCallback } from "react";
+
+import HomeParticles from "./HomeParticles";
 const HomeBody = () => {
+  const [slideIndex, setSlideIndex] = useState([
+    "icon-0",
+    "icon-1",
+    "icon-2",
+    "icon-3",
+    "icon-4",
+  ]);
+
+  const images = [
+    {
+      url: "https://img.icons8.com/color/240/null/html-5--v1.png",
+      title: "html",
+    },
+    {
+      url: "https://img.icons8.com/ultraviolet/240/null/react--v1.png",
+      title: "react",
+    },
+    { url: "https://img.icons8.com/color/240/null/css3.png", title: "css" },
+    {
+      url: "https://img.icons8.com/color/240/null/javascript--v1.png",
+      title: "javascript",
+    },
+    {
+      url: "https://img.icons8.com/fluency/240/null/node-js.png",
+      title: "Node JS",
+    },
+    {
+      url: "https://img.icons8.com/color/240/null/mongodb.png",
+      title: "Mongo DB",
+    },
+  ];
+
   return (
     <div className="home-body">
       <div className="home-body-container">
-        <div className="home-body-left">
-          <header className="home-body-left-header">
-            <span className="header-head">Learn to Code?</span>
-
-            <span className="header-body">Just let me teach you...</span>
-            <div className="get-started-nav">
-              <a href="/">
-                <button className="sign-up-button">Sign Up</button>
-              </a>
-              <a href="/">
-                <button className="learn-more-button">Learn more</button>
-              </a>
+        <HomeParticles />
+        <header className="home-body-header">
+          <span className="header-head">Learn to Code!</span>
+          <span className="header-body">
+            Begin your web development journey right here.
+          </span>
+        </header>
+        <a className="learn-more-button-holder " href="/courses">
+          <button className="learn-more-button">View Courses</button>
+        </a>
+        <a className="learn-more-button-holder " href="/info">
+          <button className="learn-more-button">Learn More</button>
+        </a>
+        <div className="icon-spinner">
+          {images.map(({ url, title }, index) => (
+            <div className={`icon-holder ${slideIndex[index]}`}>
+              <span className="icon-header">{title}</span>
+              <img
+                key={index}
+                className={`slide `}
+                src={url}
+                alt={`Slide ${index}`}
+              />
             </div>
-          </header>
+          ))}
+          {images.map(({ url, title }, index) => (
+            <div className={`icon-holder ${slideIndex[index]}`}>
+              <span className="icon-header">{title}</span>
+              <img
+                key={index}
+                className={`slide `}
+                src={url}
+                alt={`Slide ${index}`}
+              />
+            </div>
+          ))}
+          {images.map(({ url, title }, index) => (
+            <div className={`icon-holder ${slideIndex[index]}`}>
+              <span className="icon-header">{title}</span>
+              <img
+                key={index}
+                className={`slide `}
+                src={url}
+                alt={`Slide ${index}`}
+              />
+            </div>
+          ))}
         </div>
-        <div className="home-body-seperator-right"></div>
-        <div className="home-body-seperator-line"></div>
-        <div className="home-body-seperator-left"></div>
-        <div className="home-body-right">
-          <header className="home-body-right-header">
-            <h1>Home Body Right</h1>
-          </header>
-        </div>
-      </div>
-      <div className="home-banner-container">
-        <div className="main-banner">
-          <div className="main-banner-header">What is True Technicalities?</div>
-          <div className="main-banner-body"></div>
-        </div>
-        <Banner index={0} />
-        <Banner index={1} />
-        <Banner index={2} />
       </div>
     </div>
   );

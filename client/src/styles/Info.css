@@ -1,0 +1,92 @@
+.info-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  background-color: #04080f;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-banner {
+  width: 60vw;
+  height: 70vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.info-banner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.main-banner-header {
+  font: 700 2rem "Roboto", sans-serif;
+  color: #fdfffd;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #f0a202;
+}
+.main-banner-body {
+  width: 80%;
+  height: 80%;
+  background: url(./../assets/img-holder.png);
+}
+.banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+
+  margin: 50px 0;
+}
+.banner-img {
+  width: 50%;
+  height: 40vh;
+}
+.banner-header {
+  font: 1000 1.8rem "Roboto", sans-serif;
+  text-transform: uppercase;
+  color: #fdfffd;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  padding-top: 20px;
+}
+.banner-body {
+  font: 700 1rem "Roboto", sans-serif;
+  color: #fdfffd;
+  margin: 0;
+  padding: 0 10px;
+  text-align: center;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 35vh;
+  border-left: 1px solid #f0a202;
+  border-right: 1px solid #f0a202;
+}
+.banner-body-text {
+  font: 700 1.5rem "Roboto", sans-serif;
+  color: #fdfdff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  padding-top: 20px;
+  width: 50%;
+}

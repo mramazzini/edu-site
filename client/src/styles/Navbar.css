@@ -6,10 +6,8 @@
   box-sizing: border-box;
   position: fixed;
   top: 0;
-  background: #212121;
-  z-index: 1;
-  border-bottom: 1px solid #0d7377;
-  border-bottom-color: rgba(13, 115, 119, 0.2);
+  background: none;
+  z-index: 999;
 }
 .nav-container {
   width: 100%;
@@ -56,12 +54,11 @@
 }
 
 .left-nav li a {
-  border-left: rgba(13, 115, 119) 1px solid;
+  border-left: #f0a202 1px solid;
 
   font: 400 1rem "Roboto", sans-serif;
   text-decoration: none;
-  color: #14ffec;
-  opacity: 0.8;
+  color: #fdfdff;
 
   padding: 0 10px;
   transition: all 0.3s ease;
@@ -73,8 +70,7 @@
 .right-nav li a {
   font: 400 1rem "Roboto", sans-serif;
   text-decoration: none;
-  color: #14ffec;
-  opacity: 0.8;
+  color: #fdfdff;
 
   padding: 0 10px;
   transition: all 0.3s ease;
@@ -84,12 +80,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #14ffec;
-  color: #212121 !important;
-  height: 40px !important;
-  border-left: none !important;
-  border-radius: 10px;
-  padding: 0 20px;
 
   font: 400 1rem "Roboto", sans-serif;
   cursor: pointer;

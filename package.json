@@ -5,7 +5,13 @@
   "main": "server/server.js",
   "dependencies": {
     "bcrypt": "^5.1.0",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "pathseg": "^1.2.1",
+    "react-tsparticles": "^2.9.3",
+    "tsparticles": "^2.9.3",
+    "tsparticles-engine": "^2.9.3",
+    "tsparticles-path-polygon": "^2.9.3",
+    "tsparticles-plugin-polygon-mask": "^2.9.3"
   },
   "scripts": {
     "start": "node server/server.js --ignore client",
