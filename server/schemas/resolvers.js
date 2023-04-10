@@ -1,6 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, SnakePlayer } = require("../models");
-
+require("dotenv").config();
 const { signToken } = require("../utils/auth");
 const fs = require("fs").promises;
 
@@ -32,7 +32,29 @@ const resolvers = {
       return { token, user };
     },
     addSnakePlayer: async (parent, { username, score }, context) => {
-      const snakePlayer = await SnakePlayer.create({ username, score });
+      const myHeaders = new Headers();
+      myHeaders.append("apikey", process.env.PROFANITY_API_KEY);
+
+      const requestOptions = {
+        method: "POST",
+        redirect: "follow",
+        headers: myHeaders,
+        body: username,
+      };
+
+      const response = await fetch(
+        "https://api.apilayer.com/bad_words?censor_character=*",
+        requestOptions
+      );
+      const censoredResponse = await response.text();
+      const censoredUsername = await JSON.parse(censoredResponse)
+        .censored_content;
+
+      const snakePlayer = await SnakePlayer.create({
+        username: censoredUsername,
+        score,
+      });
+
       return snakePlayer;
     },
 
