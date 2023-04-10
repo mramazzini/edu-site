@@ -1,3 +1,4 @@
 const User = require("./User");
+const SnakePlayer = require("./SnakePlayer");
 
-module.exports = { User };
+module.exports = { User, SnakePlayer };

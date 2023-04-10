@@ -21,3 +21,11 @@ export const ADD_USER = gql`
     }
   }
 `;
+export const ADD_SNAKE_PLAYER = gql`
+  mutation addSnakePlayer($username: String!, $score: Int!) {
+    addSnakePlayer(username: $username, score: $score) {
+      username
+      score
+    }
+  }
+`;

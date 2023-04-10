@@ -44,12 +44,15 @@ const HomeBody = () => {
             Begin your web development journey right here.
           </span>
         </header>
-        <a className="learn-more-button-holder " href="/courses">
-          <button className="learn-more-button">View Courses</button>
-        </a>
-        <a className="learn-more-button-holder " href="/info">
-          <button className="learn-more-button">Learn More</button>
-        </a>
+        <nav className="home-body-nav">
+          <a className="learn-more-button-holder " href="/courses">
+            <button className="learn-more-button">View Courses</button>
+          </a>
+          <a className="learn-more-button-holder " href="/info">
+            <button className="learn-more-button">Learn More</button>
+          </a>
+        </nav>
+
         <div className="icon-spinner">
           {images.map(({ url, title }, index) => (
             <div className={`icon-holder ${slideIndex[index]}`}>

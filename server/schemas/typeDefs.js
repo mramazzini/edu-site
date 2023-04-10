@@ -9,7 +9,11 @@ const typeDefs = gql`
     email: String
     password: String
   }
-
+  type SnakePlayer {
+    _id: ID
+    username: String
+    score: Int
+  }
   type Auth {
     token: ID!
     user: User
@@ -18,11 +22,13 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(id: String): User
+    snakeLeaderBoard: [SnakePlayer]
   }
 
   type Mutation {
     addUser(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addSnakePlayer(username: String!, score: Int!): SnakePlayer
   }
 `;
 

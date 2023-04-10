@@ -5,11 +5,12 @@ import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
 import { useNavigate } from "react-router-dom";
 import "../../styles/Register.css";
-import Navbar from "../Navbar";
+import RegisterGame from "./RegisterGame";
+import Leaderboard from "./Leaderboard";
 const RegisterComponent = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [addUser] = useMutation(ADD_USER);
-
+  const [score, setScore] = useState(0);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -43,31 +44,40 @@ const RegisterComponent = () => {
   };
 
   return (
-    <div className="login-container">
-      <Navbar />
-      <h2>Register</h2>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-          onChange={handleChange}
-          type="email"
-          placeholder="example@email.com"
-          id="email"
-          name="email"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          onChange={handleChange}
-          type="password"
-          placeholder="********"
-          id="password"
-          name="password"
-        />
-        <button type="submit">Sign Up</button>
-      </form>
-      <Link className="link-btn" to="/login">
-        Already have an account? Login here
-      </Link>
+    <div className="register-body">
+      <div className="register-container">
+        <h2>Register</h2>
+        <form className="register-form" onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            onChange={handleChange}
+            type="email"
+            placeholder="example@email.com"
+            id="email"
+            name="email"
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            onChange={handleChange}
+            type="password"
+            placeholder="********"
+            id="password"
+            name="password"
+          />
+          <nav className="register-nav">
+            <button className="home-button" to="/">
+              Go Back
+            </button>
+            <button type="submit">Sign Up</button>
+          </nav>
+        </form>
+
+        <Link className="link-btn" to="/login">
+          Already have an account? Login here
+        </Link>
+      </div>
+      <RegisterGame score={score} setScore={setScore} />
+      <Leaderboard score={score} />
     </div>
   );
 };

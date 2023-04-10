@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require("../models");
+const { User, SnakePlayer } = require("../models");
 
 const { signToken } = require("../utils/auth");
 const fs = require("fs").promises;
@@ -16,6 +16,11 @@ const resolvers = {
       const id = context.user._id;
       return User.findOne({ _id: id });
     },
+    snakeLeaderBoard: async () => {
+      const players = await SnakePlayer.find().sort({ score: -1 });
+
+      return players.slice(0, 5);
+    },
   },
 
   Mutation: {
@@ -25,6 +30,10 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addSnakePlayer: async (parent, { username, score }, context) => {
+      const snakePlayer = await SnakePlayer.create({ username, score });
+      return snakePlayer;
     },
 
     login: async (parent, { email, password }) => {
