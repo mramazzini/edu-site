@@ -13,6 +13,10 @@ const Leaderboard = ({ score }) => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    //check to see if the username is too long
+    if (value.length > 15) {
+      return;
+    }
     setFormState({
       ...formState,
       [name]: value,
@@ -56,7 +60,10 @@ const Leaderboard = ({ score }) => {
   return (
     <div className="leaderboard">
       <form className="snake-form" onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">
+          Username: {formState.username} <br />
+          Score:{score}
+        </label>
         <input
           onChange={handleChange}
           type="username"

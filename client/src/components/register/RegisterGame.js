@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import RegisterParticles from "./RegisterParticles";
 const RegisterGame = ({ score, setScore }) => {
   const [game, setGame] = useState({
     position: { x: 0, y: 0 },
@@ -13,6 +13,7 @@ const RegisterGame = ({ score, setScore }) => {
     ],
   });
   const [keysPressed, setKeysPressed] = useState({});
+  const [stonks, setStonks] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -180,6 +181,7 @@ const RegisterGame = ({ score, setScore }) => {
 
   return (
     <div className="register-game-wrapper">
+      {stonks ? <RegisterParticles /> : ""}
       <div className="register-game-head">Create a game!</div>
       <div className="register-game-title">
         <h1>Snake Game</h1>
@@ -193,7 +195,7 @@ const RegisterGame = ({ score, setScore }) => {
 
       <div className="register-game">
         <div
-          className="game-apple "
+          className={`game-apple game-apple-${game.gameOver ? "dead" : ""}`}
           style={{ top: game.apple.y * 10, left: game.apple.x * 10 }}
         ></div>
         <div className="snake">
@@ -231,6 +233,9 @@ const RegisterGame = ({ score, setScore }) => {
         )}
       </div>
       <div className="register-game-head">Or make a website!</div>
+      <button className="enable-stonks" onClick={() => setStonks(!stonks)}>
+        Toggle Stonks
+      </button>
     </div>
   );
 };

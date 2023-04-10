@@ -1,3 +1,6 @@
+.register-game-wrapper * {
+  z-index: 1;
+}
 .register-page {
   display: flex;
   justify-content: center;
@@ -20,7 +23,7 @@
 .register-container {
   width: 30%;
   min-width: 200px;
-  border-right: 1px solid #f0a202;
+  border-right: 1px solid #1985a1;
   background-color: #04080f;
   height: 100%;
   display: flex;
@@ -64,7 +67,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0a202;
+  background-color: #1985a1;
   text-shadow: 1px 1px 1px 1px #04080f;
   color: #fff !important;
   height: 40px !important;
@@ -117,10 +120,10 @@
   height: 249px;
   position: relative;
   background-color: #04080f;
-  border: 1px solid #f0a202;
+  border: 1px solid #1985a1;
 }
 .snake-head {
-  background-color: #f0a202;
+  background-color: #1985a1;
   border: 1px solid #04080f;
   position: absolute;
   width: 9px;
@@ -131,7 +134,7 @@
   border-top-right-radius: 5px;
 }
 .snake-head-dead {
-  background-color: #f00;
+  display: none;
 }
 .snake-head-down {
   border-bottom-left-radius: 5px;
@@ -163,12 +166,12 @@
   align-items: center;
   height: 100%;
   text-decoration: underline;
-  text-decoration-color: #f0a202;
+  text-decoration-color: #1985a1;
   text-underline-offset: 5px;
 }
 .register-game-button {
   background-color: #04080f;
-  border: 1px solid #f0a202;
+  border: 1px solid #1985a1;
   border-radius: 10px;
   transition: all 0.3s ease;
   position: relative;
@@ -186,8 +189,11 @@
 
   width: 40%;
 }
+.game-apple-dead {
+  display: none;
+}
 .register-game-button:hover {
-  background-color: #f0a202;
+  background-color: #1985a1;
 }
 .register-game-header {
   display: flex;
@@ -199,7 +205,7 @@
 }
 .register-game-score {
   background-color: #04080f;
-  border: 1px solid #f0a202;
+  border: 1px solid #1985a1;
   border-radius: 10px;
   transition: all 0.3s ease;
   position: relative;
@@ -239,7 +245,7 @@
   align-items: center;
   flex-direction: row;
   width: 250px;
-  height: 7.5vh;
+
   font: 700 3rem "Roboto", sans-serif;
   color: #fdfdff;
   width: 80%;
@@ -248,6 +254,10 @@
   white-space: nowrap;
   overflow: hidden;
   text-align: center;
+  text-shadow: 1px 1px 1px 1px #04080f;
+  text-decoration: underline;
+  text-decoration-color: #1985a1;
+  text-underline-offset: 10px;
 }
 .register-game-title {
   display: flex;
@@ -262,11 +272,40 @@
   flex-direction: column;
   width: 30%;
   height: 100%;
-  border-left: 1px solid #f0a202;
+  border-left: 1px solid #1985a1;
   background-color: #04080f;
   color: #fff;
   text-shadow: 1px 1px 1px 1px #04080f;
   font: 700 1rem "Roboto", sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+}
+.enable-stonks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1985a1;
+  color: #fdfdff;
+  border: 1px solid #04080f;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  padding: 10px;
+  font: 700 1rem "Roboto", sans-serif;
+  text-shadow: 1px 1px 1px 1px #04080f;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px #04080f;
+}
+.enable-stonks:hover {
+  opacity: 0.8;
+}
+.enable-stonks:active,
+.snake-form-button:active,
+.register-game-button:active,
+.register-game-score:active {
+  opacity: 0.6;
 }
 .snake-form {
   display: flex;
@@ -283,7 +322,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0a202;
+  background-color: #1985a1;
   text-shadow: 1px 1px 1px 1px #04080f;
   color: #fff !important;
   height: 40px !important;
@@ -310,11 +349,13 @@
   font: 700 1rem "Roboto", sans-serif;
   transition: all 0.3s ease;
   text-shadow: 1px 1px 1px 1px #04080f;
-
+  text-overflow: ellipsis;
+  white-space: nowrap;
   background-color: rgb(0, 0, 0, 0.4);
   border: none;
   color: #fff;
 }
+
 .snake-form * {
   margin: 3px;
 }
@@ -334,13 +375,16 @@
   position: relative;
   margin-right: auto;
 }
+#tsparticles2 {
+  z-index: 0 !important;
+}
 .podium-section {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 70%;
   flex-direction: row;
-  border-bottom: 1px solid #f0a202;
+  border-bottom: 1px solid #1985a1;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

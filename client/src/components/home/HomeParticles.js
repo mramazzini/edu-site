@@ -46,7 +46,7 @@ const HomeParticles = () => {
         fpsLimit: 60,
         particles: {
           color: {
-            value: "#f0a202",
+            value: "#1985A1",
           },
           move: {
             attract: {
