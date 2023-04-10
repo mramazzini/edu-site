@@ -4,7 +4,7 @@ import { LOGIN } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
 import Auth from "../utils/auth";
-import Navbar from "../Navbar";
+import LoginGame from "./LoginGame";
 const LoginComponent = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login] = useMutation(LOGIN);
@@ -37,31 +37,38 @@ const LoginComponent = () => {
     });
   };
   return (
-    <div className="login-container">
-      <Navbar />
-      <h2>Login</h2>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-          onChange={handleChange}
-          type=""
-          placeholder="example@email.com"
-          id="email"
-          name="email"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          onChange={handleChange}
-          type="password"
-          placeholder="********"
-          id="password"
-          name="password"
-        />
-        <button type="submit">Log In</button>
-      </form>
-      <Link className="link-btn" to="/register">
-        Don't have an account? Register here!
-      </Link>
+    <div className="login-body">
+      <div className="login-container">
+        <h2>Login</h2>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <label htmlFor="email">Email</label>
+          <input
+            onChange={handleChange}
+            type=""
+            placeholder="example@email.com"
+            id="email"
+            name="email"
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            onChange={handleChange}
+            type="password"
+            placeholder="********"
+            id="password"
+            name="password"
+          />
+          <nav className="login-nav">
+            <a href="/" className="home-button">
+              Go Back
+            </a>
+            <button type="submit">Login</button>
+          </nav>
+        </form>
+        <Link className="link-btn" to="/register">
+          Don't have an account? Register here!
+        </Link>
+      </div>
+      <LoginGame />
     </div>
   );
 };

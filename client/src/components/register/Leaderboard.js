@@ -14,7 +14,7 @@ const Leaderboard = ({ score }) => {
   const handleChange = (event) => {
     const { name, value } = event.target;
     //check to see if the username is too long
-    if (value.length > 15) {
+    if (value.length > 12) {
       return;
     }
     setFormState({
@@ -24,6 +24,7 @@ const Leaderboard = ({ score }) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const response = await addSnakePlayer({
         variables: {
@@ -54,7 +55,10 @@ const Leaderboard = ({ score }) => {
     }
   };
   const handleLeaderBoard = () => {
-    window.location.reload();
+    //delay the reload to allow the leaderboard to update
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   };
 
   return (

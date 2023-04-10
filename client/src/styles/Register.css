@@ -56,14 +56,16 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 70%;
+  width: 50%;
   height: 100%;
   background-color: #000000;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.register-form a,
 .register-form button {
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,7 +75,7 @@
   height: 40px !important;
   border-left: none !important;
   border-radius: 10px;
-  padding: 0 20px;
+
   border: none;
   box-shadow: 1px 1px 1px 1px #04080f;
   font: 700 1rem "Roboto", sans-serif;
@@ -81,7 +83,6 @@
   transition: all 0.3s ease;
   position: relative;
   top: 10%;
-
   width: 40%;
 }
 .register-nav {
@@ -112,7 +113,8 @@
 .register-form label:hover {
   color: #fff;
 }
-.register-form button:hover {
+.register-form button:hover,
+.register-form a:hover {
   opacity: 0.8;
 }
 .register-game {
@@ -270,7 +272,7 @@
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  width: 30%;
+  width: 20%;
   height: 100%;
   border-left: 1px solid #1985a1;
   background-color: #04080f;
@@ -377,6 +379,11 @@
 }
 #tsparticles2 {
   z-index: 0 !important;
+  transition: all 1s ease-in;
+  opacity: 0;
+}
+.show {
+  opacity: 1 !important;
 }
 .podium-section {
   display: flex;

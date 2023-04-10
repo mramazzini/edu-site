@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import stonks from "../../assets/stonks.png";
-const RegisterParticles = () => {
+const RegisterParticles = ({ show }) => {
   const particlesInit = useCallback(async (engine) => {
     console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -17,7 +17,7 @@ const RegisterParticles = () => {
 
   return (
     <Particles
-      className="particles"
+      className={`particles ${show ? "show" : ""} `}
       id="tsparticles2"
       init={particlesInit}
       loaded={particlesLoaded}

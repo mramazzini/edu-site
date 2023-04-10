@@ -181,7 +181,7 @@ const RegisterGame = ({ score, setScore }) => {
 
   return (
     <div className="register-game-wrapper">
-      {stonks ? <RegisterParticles /> : ""}
+      <RegisterParticles show={stonks} />
       <div className="register-game-head">Create a game!</div>
       <div className="register-game-title">
         <h1>Snake Game</h1>

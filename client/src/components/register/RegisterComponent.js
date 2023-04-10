@@ -65,9 +65,9 @@ const RegisterComponent = () => {
             name="password"
           />
           <nav className="register-nav">
-            <button className="home-button" to="/">
+            <a href="/" className="home-button">
               Go Back
-            </button>
+            </a>
             <button type="submit">Sign Up</button>
           </nav>
         </form>
