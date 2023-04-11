@@ -56,16 +56,16 @@ const RegisterGame = ({ score, setScore }) => {
     }
     //Check if snake is out of bounds
 
-    if (keysPressed["ArrowUp"]) {
+    if (keysPressed["ArrowUp"] && game.direction !== "down") {
       setGame((prevState) => ({ ...prevState, direction: "up" }));
     }
-    if (keysPressed["ArrowDown"]) {
+    if (keysPressed["ArrowDown"] && game.direction !== "up") {
       setGame((prevState) => ({ ...prevState, direction: "down" }));
     }
-    if (keysPressed["ArrowLeft"]) {
+    if (keysPressed["ArrowLeft"] && game.direction !== "right") {
       setGame((prevState) => ({ ...prevState, direction: "left" }));
     }
-    if (keysPressed["ArrowRight"]) {
+    if (keysPressed["ArrowRight"] && game.direction !== "left") {
       setGame((prevState) => ({ ...prevState, direction: "right" }));
     }
 
