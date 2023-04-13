@@ -23,12 +23,20 @@ const typeDefs = gql`
     users: [User]
     user(id: String): User
     snakeLeaderBoard: [SnakePlayer]
+    getLoginCount: Int
+  }
+  type Count {
+    value: Int
   }
 
   type Mutation {
     addUser(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addSnakePlayer(username: String!, score: Int!): SnakePlayer
+    incrementLoginCount: Int
+  }
+  type Subscription {
+    loginCountSubscription: Int
   }
 `;
 

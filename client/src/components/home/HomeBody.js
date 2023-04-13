@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-
+import { Link } from "react-router-dom";
 import HomeParticles from "./HomeParticles";
 const HomeBody = () => {
   const [slideIndex, setSlideIndex] = useState([
@@ -45,12 +45,12 @@ const HomeBody = () => {
           </span>
         </header>
         <nav className="home-body-nav">
-          <a className="learn-more-button-holder " href="/courses">
+          <Link className="learn-more-button-holder " href="/courses">
             <button className="learn-more-button">Get Started</button>
-          </a>
-          <a className="learn-more-button-holder " href="/info">
+          </Link>
+          <Link className="learn-more-button-holder " href="/info">
             <button className="learn-more-button">Learn More</button>
-          </a>
+          </Link>
         </nav>
 
         <div className="icon-spinner">

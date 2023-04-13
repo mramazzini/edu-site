@@ -1,5 +1,10 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, SnakePlayer } = require("../models");
+const { PubSub } = require("graphql-subscriptions");
+
+const pubsub = new PubSub();
+const COUNT_UPDATED = "LOGIN_COUNT_UPDATED";
+const COUNT_KEY = "count";
+const { User, SnakePlayer, Count } = require("../models");
 require("dotenv").config();
 const { signToken } = require("../utils/auth");
 const fs = require("fs").promises;
@@ -20,6 +25,18 @@ const resolvers = {
       const players = await SnakePlayer.find().sort({ score: -1 });
 
       return players.slice(0, 5);
+    },
+    getLoginCount: async () => {
+      const countDoc = await Count.findOne({ key: COUNT_KEY });
+      if (!countDoc) {
+        // If there's no count document in the database, initialize it with a count value of 0
+        await Count.create({
+          key: COUNT_KEY,
+          value: 0,
+        });
+        return 0;
+      }
+      return countDoc.value;
     },
   },
 
@@ -77,6 +94,25 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    incrementLoginCount: async () => {
+      const countDoc = await Count.findOneAndUpdate(
+        { key: COUNT_KEY },
+        { $inc: { value: 1 } },
+        { returnDocument: "after" }
+      );
+      const updatedCount = countDoc.value;
+
+      pubsub.publish(COUNT_UPDATED, { countUpdated: updatedCount });
+      return updatedCount;
+    },
+  },
+  Subscription: {
+    loginCountSubscription: {
+      subscribe: () => pubsub.asyncIterator(COUNT_UPDATED),
+      resolve: (payload) => {
+        return payload.countUpdated;
+      },
     },
   },
 };
