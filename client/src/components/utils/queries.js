@@ -9,3 +9,9 @@ export const SNAKE_LEADERBOARD = gql`
     }
   }
 `;
+
+export const GET_COUNT = gql`
+  query {
+    getLoginCount
+  }
+`;

@@ -29,3 +29,9 @@ export const ADD_SNAKE_PLAYER = gql`
     }
   }
 `;
+
+export const INCREMENT_COUNT = gql`
+  mutation IncrementLoginCount {
+    incrementLoginCount
+  }
+`;

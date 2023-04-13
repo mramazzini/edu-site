@@ -7,6 +7,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Auth from "./components/utils/auth";
 import "./styles/App.css";
+import { WebSocketLink } from "@apollo/client/link/ws";
+import { split } from "@apollo/client/link/core";
+import { getMainDefinition } from "@apollo/client/utilities";
 import {
   ApolloClient,
   InMemoryCache,
@@ -39,7 +42,27 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
+const wsLink = new WebSocketLink({
+  uri: "ws://localhost:3001/graphql",
+  options: {
+    reconnect: true,
+    connectionParams: {
+      authToken: localStorage.getItem("id_token"),
+    },
+  },
+});
 
+const link = split(
+  ({ query }) => {
+    const definition = getMainDefinition(query);
+    return (
+      definition.kind === "OperationDefinition" &&
+      definition.operation === "subscription"
+    );
+  },
+  wsLink,
+  authLink.concat(httpLink)
+);
 const client = new ApolloClient({
   defaultOptions: {
     mutate: {
@@ -49,7 +72,7 @@ const client = new ApolloClient({
     },
   },
   // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-  link: authLink.concat(httpLink),
+  link,
   cache: new InMemoryCache({
     addTypename: false,
   }),
