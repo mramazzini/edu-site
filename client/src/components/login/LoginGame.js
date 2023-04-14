@@ -10,7 +10,6 @@ const LoginGame = () => {
   const [highFive, setHighFive] = useState(false);
   const [count, setCount] = useState(0);
   const [initialized, setInitialized] = useState(false);
-  const [mute, setMute] = React.useState(false);
 
   const [play] = useSound(boopSfx);
   useSubscription(COUNT_WEBSOCKET, {
