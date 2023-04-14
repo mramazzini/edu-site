@@ -45,10 +45,10 @@ const HomeBody = () => {
           </span>
         </header>
         <nav className="home-body-nav">
-          <Link className="learn-more-button-holder " href="/courses">
+          <Link className="learn-more-button-holder " to="/register">
             <button className="learn-more-button">Get Started</button>
           </Link>
-          <Link className="learn-more-button-holder " href="/info">
+          <Link className="learn-more-button-holder " to="/info">
             <button className="learn-more-button">Learn More</button>
           </Link>
         </nav>

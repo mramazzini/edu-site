@@ -13,7 +13,7 @@ const Banner = ({ index }) => {
   const bodies = [
     "Go at your own pace and learn at your own level.",
     "Built in tools to help you learn and practice.",
-    "Community feedback and support to help you along the way.",
+    "Ask a question, get an answer.",
   ];
 
   return index % 2 === 0 ? (

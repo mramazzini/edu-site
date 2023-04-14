@@ -22,7 +22,7 @@ const LoginComponent = () => {
       Auth.login(token);
 
       // Reload the page to update the state of the user
-      navigate("/");
+      navigate("/dashboard");
       await window.location.reload();
     } catch (e) {
       Auth.handleError(e);
@@ -58,9 +58,9 @@ const LoginComponent = () => {
             name="password"
           />
           <nav className="login-nav">
-            <a href="/" className="home-button">
+            <Link to="/" className="home-button">
               Go Back
-            </a>
+            </Link>
             <button type="submit">Login</button>
           </nav>
         </form>

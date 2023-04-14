@@ -52,7 +52,9 @@ const LoginGame = () => {
     <div className="login-game">
       <h1>Welcome Back!</h1>
       <div className="login-game-container">
-        <div className="login-count"> {count} people have high-fived Jerry</div>
+        <div className="login-count">
+          Jerry has been high-fived {count} times
+        </div>
         {!highFive ? (
           <div className="login-game-image">
             <div className="login-image-inactive" />

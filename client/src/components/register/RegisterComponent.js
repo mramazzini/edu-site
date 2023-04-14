@@ -28,7 +28,7 @@ const RegisterComponent = () => {
       Auth.login(token);
 
       // Reload the page to update the state of the user
-      navigate("/");
+      navigate("/dashboard");
       await window.location.reload();
     } catch (e) {
       Auth.handleError(e);
@@ -65,9 +65,9 @@ const RegisterComponent = () => {
             name="password"
           />
           <nav className="register-nav">
-            <a href="/" className="home-button">
+            <Link to="/" className="home-button">
               Go Back
-            </a>
+            </Link>
             <button type="submit">Sign Up</button>
           </nav>
         </form>

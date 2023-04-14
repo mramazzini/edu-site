@@ -2,6 +2,7 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Info from "./pages/Info";
+import Dashboard from "./pages/Dashboard";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
@@ -78,7 +79,7 @@ const client = new ApolloClient({
   }),
 });
 
-// surround a component with the `RequireAuth` component to require authentication to access the component
+// surround a component with the `RequireAuth` tag to require authentication to access the route
 function RequireAuth({ children }) {
   return Auth.loggedIn() === true ? children : <Navigate to="/login" replace />;
 }
@@ -95,6 +96,15 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
+
+            <Route
+              path="/dashboard"
+              element={
+                <RequireAuth>
+                  <Dashboard />
+                </RequireAuth>
+              }
+            />
             <Route path="/info" element={<Info />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
