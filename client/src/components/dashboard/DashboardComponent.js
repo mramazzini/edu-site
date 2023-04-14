@@ -5,6 +5,7 @@ import Card from "./Card";
 const DashboardContainer = () => {
   const [cardsVisible, setCardsVisible] = useState(false);
   const [hoveredName, setHoveredName] = useState("");
+  const [progress, setProgress] = useState(50);
   useEffect(() => {
     setCardsVisible(true);
   }, []);
@@ -12,53 +13,110 @@ const DashboardContainer = () => {
     setHoveredName(name);
   };
 
-  return (
-    <div className="dashboard-body">
-      <div className="dashboard-info">
-        <header className="dashboard-info-header">{hoveredName}</header>
+  const getInfoBody = (hoveredName) => {
+    const progressBar = () => {
+      return hoveredName === "" ? (
+        ""
+      ) : (
+        <div className="dashboard-progress-bar">
+          <div className={`dashboard-progress-bar-header `}>
+            Completion - {progress}%
+          </div>
 
-        {hoveredName === "html" && (
-          <div className="dashboard-info-body">
-            <p>HTML is the standard markup language for creating Web pages.</p>
+          <div className="dashboard-progress-bar-cover">
+            <div
+              className={`dashboard-progress-bar-inner ${hoveredName}`}
+              style={{ width: `${progress}%` }}
+            />
           </div>
-        )}
-        {hoveredName === "css" && (
+        </div>
+      );
+    };
+    switch (hoveredName) {
+      case "HTML":
+        return (
           <div className="dashboard-info-body">
-            <p>CSS is the language we use to style an HTML document.</p>
+            <div className="dashboard-info-body-header">
+              HTML is the standard markup language for creating Web pages.
+            </div>
+            {progressBar()}
           </div>
-        )}
-        {hoveredName === "javascript" && (
+        );
+
+      case "CSS":
+        return (
           <div className="dashboard-info-body">
-            <p>JavaScript is the programming language of HTML and the Web.</p>
+            <div className="dashboard-info-body-header">
+              CSS is the language we use to style an HTML document.
+            </div>
+            {progressBar()}
           </div>
-        )}
-        {hoveredName === "node" && (
+        );
+      case "javascript":
+        return (
           <div className="dashboard-info-body">
-            <p>
+            <div className="dashboard-info-body-header">
+              JavaScript is the programming language of HTML and the Web.
+            </div>
+            {progressBar()}
+          </div>
+        );
+      case "nodeJS":
+        return (
+          <div className="dashboard-info-body">
+            <div className="dashboard-info-body-header">
               Node.js is an open-source, cross-platform, back-end JavaScript
               runtime environment that runs on the V8 engine and executes
               JavaScript code outside a web browser.
-            </p>
+            </div>
+            {progressBar()}
           </div>
-        )}
-        {hoveredName === "mongo" && (
+        );
+      case "mongoDB":
+        return (
           <div className="dashboard-info-body">
-            <p>
+            <div className="dashboard-info-body-header">
               MongoDB is a cross-platform document-oriented database program.
               Classified as a NoSQL database program, MongoDB uses JSON-like
               documents with optional schemas.
-            </p>
+            </div>
+            {progressBar()}
           </div>
-        )}
-        {hoveredName === "react" && (
+        );
+
+      case "react":
+        return (
           <div className="dashboard-info-body">
-            <p>React is a JavaScript library for building user interfaces.</p>
+            <div className="dashboard-info-body-header">
+              React is a JavaScript library for building user interfaces.
+            </div>
+            {progressBar()}
           </div>
-        )}
+        );
+      default:
+        return (
+          <div className="dashboard-info-body">
+            <div className="dashboard-info-body-header">
+              Hover over an Icon!
+            </div>
+            {progressBar()}
+          </div>
+        );
+    }
+  };
+
+  return (
+    <div className="dashboard-body">
+      <div className="dashboard-info">
+        <header className="dashboard-info-header">
+          {hoveredName ? hoveredName : "Get Started!"}
+          <div className={`dashboard-info-header-line ${hoveredName}`}></div>
+        </header>
+        {getInfoBody(hoveredName)}
       </div>
 
       <div className="card-container">
-        {["html", "css", "javascript", "node", "mongo", "react"].map(
+        {["HTML", "CSS", "javascript", "nodeJS", "mongoDB", "react"].map(
           (type, index) => {
             return (
               <Card

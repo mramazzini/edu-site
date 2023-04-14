@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Card = ({ type, index, visible, onMouseEnter, onMouseLeave }) => {
   const [show, setShow] = useState([false, false, false, false, false, false]);
-
+  const [animationDelay, setAnimationDelay] = useState(index);
   const images = [
     {
       url: "https://img.icons8.com/color/240/null/html-5--v1.png",
@@ -42,6 +42,13 @@ const Card = ({ type, index, visible, onMouseEnter, onMouseLeave }) => {
     }
   }, [visible, index]);
 
+  //after 1 second, set animation delay to 0 so that bobbing animation can play
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimationDelay(0);
+    }, 1000);
+  }, [animationDelay]);
+
   const cardClass = shouldRender ? "card card-fade-in" : "card";
   return (
     <div
@@ -49,7 +56,7 @@ const Card = ({ type, index, visible, onMouseEnter, onMouseLeave }) => {
       onMouseLeave={onMouseLeave}
       className={cardClass}
       style={{
-        animationDelay: `${index * 1000}ms`,
+        animationDelay: `${animationDelay * 1000}ms`,
       }}
     >
       <div className="dashboard-card-image-container">

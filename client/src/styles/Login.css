@@ -4,7 +4,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #000000;
+  background-color: #04080f;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,15 +31,16 @@
   justify-content: center;
   align-items: center;
   background-color: #1985a1;
-  text-shadow: 1px 1px 1px 1px #04080f;
+  text-shadow: 1px 1px 1px 1px #091120;
   color: #fff !important;
   height: 40px !important;
   border-left: none !important;
   border-radius: 10px;
 
   border: none;
-  box-shadow: 1px 1px 1px 1px #04080f;
-  font: 700 1rem "Roboto", sans-serif;
+  box-shadow: 1px 1px 1px 1px #091120;
+  font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
@@ -54,7 +55,7 @@
 }
 .login-form label {
   color: #fff;
-  text-shadow: 1px 1px 1px 1px #04080f;
+  text-shadow: 1px 1px 1px 1px #091120;
 }
 .login-form label:hover {
   color: #fff;
@@ -65,9 +66,10 @@
   border-radius: 10px;
   border: none;
   padding: 0 20px;
-  font: 700 1rem "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
   transition: all 0.3s ease;
-  text-shadow: 1px 1px 1px 1px #04080f;
+  text-shadow: 1px 1px 1px 1px #091120;
 }
 .login-nav {
   display: flex;
@@ -75,10 +77,11 @@
   align-items: center;
   width: 100%;
   margin-top: 20px;
-  background-color: #04080f;
+  background-color: #091120;
   color: #fff;
   text-align: center;
-  font: 700 1rem "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .login-body {
@@ -98,7 +101,7 @@
   width: 30%;
   min-width: 200px;
   border-right: 1px solid #1985a1;
-  background-color: #04080f;
+  background-color: #091120;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -106,7 +109,8 @@
   align-items: center;
   color: #fff;
   text-align: center;
-  font: 700 1rem "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
   padding-top: 20%;
   z-index: 2;
 }
@@ -115,7 +119,7 @@
   color: #fff;
   margin-top: 20px;
   width: 70%;
-  text-shadow: 1px 1px 1px 1px #04080f;
+  text-shadow: 1px 1px 1px 1px #091120;
 }
 .link-btn:hover {
   opacity: 0.8;
@@ -127,7 +131,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
+  background-color: #04080f;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -136,8 +140,9 @@
 }
 .login-game h1 {
   color: #fff;
-  text-shadow: 1px 1px 1px 1px #04080f;
-  font: 700 4rem "Roboto", sans-serif;
+  text-shadow: 1px 1px 1px 1px #091120;
+  font-size: 4rem;
+  font-weight: 700;
   text-decoration: underline;
   text-decoration-color: #1985a1;
   text-decoration-thickness: 2px;
@@ -150,7 +155,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
+  background-color: #04080f;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -165,14 +170,15 @@
   background-color: #1985a1;
   border: none;
   color: #fff;
-  font: 700 1rem "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   top: 10%;
   text-decoration: none;
   margin-top: 20px;
-  text-shadow: 1px 1px 1px 1px #04080f;
+  text-shadow: 1px 1px 1px 1px #091120;
 }
 .high-five-button:hover {
   opacity: 0.8;
@@ -180,8 +186,9 @@
 }
 .login-count {
   color: #fff;
-  text-shadow: 1px 1px 1px 1px #04080f;
-  font: 700 1rem "Roboto", sans-serif;
+  text-shadow: 1px 1px 1px 1px #091120;
+  font-size: 1rem;
+  font-weight: 700;
   margin-top: 20px;
 }
 .login-image-left {
@@ -211,7 +218,7 @@
   align-items: center;
   width: 50vh;
   height: 50vh;
-  background-color: #000000;
+  background-color: #04080f;
   flex-direction: row;
 }
 .login-image-active {

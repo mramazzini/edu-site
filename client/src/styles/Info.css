@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
-  background-color: #04080f;
+  background-color: #091120;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,7 +29,7 @@
 }
 
 .main-banner-header {
-  font: 700 2rem "Roboto", sans-serif;
+  font: 700 2rem;
   color: #fdfffd;
   margin: 0;
   padding: 0;
@@ -57,7 +57,7 @@
   height: 40vh;
 }
 .banner-header {
-  font: 1000 1.8rem "Roboto", sans-serif;
+  font: 1000 1.8rem;
   text-transform: uppercase;
   color: #fdfffd;
   margin: 0;
@@ -66,7 +66,7 @@
   padding-top: 20px;
 }
 .banner-body {
-  font: 700 1rem "Roboto", sans-serif;
+  font: 700 1rem;
   color: #fdfffd;
   margin: 0;
   padding: 0 10px;
@@ -82,7 +82,7 @@
   border-right: 1px solid #129490;
 }
 .banner-body-text {
-  font: 700 1.5rem "Roboto", sans-serif;
+  font: 700 1.5rem;
   color: #fdfdff;
   margin: 0;
   padding: 0;
