@@ -1,5 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { PubSub } = require("graphql-subscriptions");
+const fetch = require("node-fetch");
 
 const pubsub = new PubSub();
 const COUNT_UPDATED = "LOGIN_COUNT_UPDATED";
@@ -49,7 +50,7 @@ const resolvers = {
       return { token, user };
     },
     addSnakePlayer: async (parent, { username, score }, context) => {
-      const myHeaders = new Headers();
+      let myHeaders = new fetch.Headers();
       myHeaders.append("apikey", process.env.PROFANITY_API_KEY);
 
       const requestOptions = {
