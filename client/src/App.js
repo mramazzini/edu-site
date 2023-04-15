@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === "production") {
     uri: "https://mern-edu-site.herokuapp.com/graphql",
     //uri: "/graphql",
   });
-  wsURL = "ws://mern-edu-site.herokuapp.com/graphql";
+  wsURL = "wss://mern-edu-site.herokuapp.com/graphql";
 } else {
   httpLink = createHttpLink({
     uri: "http://localhost:3001/graphql",
