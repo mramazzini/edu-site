@@ -90,4 +90,20 @@ Technologies used:
 5. [Apollo/GraphQL (Server)](https://www.apollographql.com/docs/)
 6. [Apollo/GraphQL (Websocket)](https://www.apollographql.com/docs/react/api/link/apollo-link-ws/)
 
+### **Dashboard Page** **(WIP)**
+
+- Dashboard where users can access the specific courses and view their percentage completion.
+- [Link to Page]() **Note: will not work as website is not deployed yet**
+  ![Dashboard Page](./client/src/assets/readmeImages/Dashboard-page.PNG)
+
+Features:
+
+1. Largely animated utilizing [React (useState, useEffect)](https://react.dev/) and [CSS](https://www.w3schools.com/css/)
+2. **(WIP)** Completion Percentage (%) is stored in a MongoDB Collection and accessed via the GraphQL API. **(WIP)**
+
+Technologies used:
+
+1. [React (Framework)](https://react.dev/)
+2. [CSS (Styling)](https://www.w3schools.com/css/)
+
 ---
