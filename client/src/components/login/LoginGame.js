@@ -26,7 +26,7 @@ const LoginGame = () => {
     setHighFive(true);
     setTimeout(() => {
       setHighFive(false);
-    }, 500);
+    }, 50);
     try {
       const { data } = await incrementCount();
     } catch (err) {
