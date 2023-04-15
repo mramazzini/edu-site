@@ -5,7 +5,7 @@ import Card from "./Card";
 const DashboardContainer = () => {
   const [cardsVisible, setCardsVisible] = useState(false);
   const [hoveredName, setHoveredName] = useState("");
-  const [progress, setProgress] = useState(50);
+  const [progress, setProgress] = useState(70);
   useEffect(() => {
     setCardsVisible(true);
   }, []);
