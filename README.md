@@ -1,5 +1,7 @@
 # MERN Stack Educational Site (name needed)
 
+## [Link to Site](https://mern-edu-site.herokuapp.com/)
+
 ## Web application dedicated to teaching the entire MERN tech stack
 
 ### Technologies taught include
@@ -22,7 +24,7 @@
 ### **Home Page**
 
 - Landing page of application
-- [Link to Page]() **Note: will not work as website is not deployed yet**
+- [Link to Page](https://mern-edu-site.herokuapp.com/) **Note: will not work as website is not deployed yet**
   ![Home Page](./client/src/assets/readmeImages/Home-page.PNG)
 
 Features:
@@ -42,7 +44,7 @@ Technologies used:
 ### **Register Page**
 
 - Register page of application
-- [Link to Page]() **Note: will not work as website is not deployed yet**
+- [Link to Page](https://mern-edu-site.herokuapp.com/register) **Note: will not work as website is not deployed yet**
   ![Register Page](./client/src/assets/readmeImages/Register-page.PNG)
 
 Features:
@@ -71,7 +73,7 @@ Technologies used:
 ### **Login Page**
 
 - Login Page for Application
-- [Link to Page]() **Note: will not work as website is not deployed yet**
+- [Link to Page](https://mern-edu-site.herokuapp.com/login) **Note: will not work as website is not deployed yet**
   ![Login Page](./client/src/assets/readmeImages/Login-page.PNG)
 
 Features:
@@ -79,7 +81,7 @@ Features:
 1. Fully functional Login form with error handling and links to the Register Page or back to the Home Page. User data is stored in a [MongoDB](https://www.mongodb.com/) collection via an [Apollo/GraphQL](https://www.apollographql.com/docs/) mutation handled on the backend.
 2. JSON Web Token ([JWT](https://jwt.io/)) recieved from login and cached on users machine with localStorage in order to maintain the user as logged in once redirected to another page.
 3. [Apollo/GraphQL](https://www.apollographql.com/docs/react/api/link/apollo-link-ws/) websocket server dedicated to update the number of times Jerry has been high fived live across all users. An [Apollo/GraphQL](https://www.apollographql.com/docs/) server mutation is sent on clicking the high five to increment the total number in the [MongoDB](https://www.mongodb.com/) collection, simultaneously updating all the users via the websocket.
-4. High Five animation made with [React ](https://react.dev/) and its corresponding useState hook.
+4. High Five animation made with [React](https://react.dev/) and its corresponding useState hook.
 
 Technologies used:
 
@@ -93,7 +95,7 @@ Technologies used:
 ### **Dashboard Page** **(WIP)**
 
 - Dashboard where users can access the specific courses and view their percentage completion.
-- [Link to Page]() **Note: will not work as website is not deployed yet**
+- [Link to Page](https://mern-edu-site.herokuapp.com/) **Note: Need to be logged in**
   ![Dashboard Page](./client/src/assets/readmeImages/Dashboard-page.PNG)
 
 Features:
