@@ -50,10 +50,10 @@ const LoginGame = () => {
   return (
     <div className="login-game">
       <h1>Welcome Back!</h1>
+      <div className="login-count" style={{ marginBot: "10%" }}>
+        Jerry has been high-fived {count} times
+      </div>
       <div className="login-game-container">
-        <div className="login-count">
-          Jerry has been high-fived {count} times
-        </div>
         {!highFive ? (
           <div className="login-game-image">
             <div className="login-image-inactive" />
@@ -63,6 +63,9 @@ const LoginGame = () => {
             <div className="login-image-active" />
           </div>
         )}
+      </div>
+      <div className="login-count" style={{ marginTop: "20px" }}>
+        I kindly ask that you contribute.
       </div>
       <button className="high-five-button" onClick={handleIncrement}>
         Give Jerry a high five
