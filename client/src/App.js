@@ -22,7 +22,7 @@ let httpLink;
 // Construct our main GraphQL API endpoint
 if (process.env.NODE_ENV === "production") {
   httpLink = createHttpLink({
-    uri: "https://mern-edu-site.herokuapp.com/register",
+    uri: "https://mern-edu-site.herokuapp.com/graphql",
     //uri: "/graphql",
   });
 } else {
