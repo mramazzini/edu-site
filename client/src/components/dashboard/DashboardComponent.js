@@ -65,9 +65,8 @@ const DashboardContainer = () => {
         return (
           <div className="dashboard-info-body">
             <div className="dashboard-info-body-header">
-              Node.js is an open-source, cross-platform, back-end JavaScript
-              runtime environment that runs on the V8 engine and executes
-              JavaScript code outside a web browser.
+              Node.js is a back-end environment that executes JavaScript code
+              outside a web browser.
             </div>
             {progressBar()}
           </div>
@@ -76,9 +75,8 @@ const DashboardContainer = () => {
         return (
           <div className="dashboard-info-body">
             <div className="dashboard-info-body-header">
-              MongoDB is a cross-platform document-oriented database program.
-              Classified as a NoSQL database program, MongoDB uses JSON-like
-              documents with optional schemas.
+              MongoDB is a database program intended to store data in JSON-like
+              documents.
             </div>
             {progressBar()}
           </div>

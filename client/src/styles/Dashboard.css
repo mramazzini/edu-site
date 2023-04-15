@@ -247,3 +247,37 @@
   flex-direction: column;
   align-content: flex-start;
 }
+
+@media screen and (max-width: 1000px) {
+  .dashboard-info-header {
+    font-size: 15vw;
+    text-align: center;
+    width: 90%;
+  }
+  .dashboard-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dashboard-info-body-header {
+    text-align: center;
+  }
+
+  .dashboard-progress-bar {
+    width: 100%;
+    height: 50%;
+  }
+
+  .dashboard-progress-bar-header {
+    font-size: 1.5rem;
+  }
+  .dashboard-progress-bar-inner {
+    height: 100%;
+  }
+}
