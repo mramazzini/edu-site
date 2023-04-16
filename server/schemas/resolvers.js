@@ -1,13 +1,14 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { PubSub } = require("graphql-subscriptions");
 const fetch = require("node-fetch");
-
+const sendMessage = require("../utils/discordWebHook");
 const pubsub = new PubSub();
 const COUNT_UPDATED = "LOGIN_COUNT_UPDATED";
 const COUNT_KEY = "count";
 const { User, SnakePlayer, Count } = require("../models");
 require("dotenv").config();
 const { signToken } = require("../utils/auth");
+const { update } = require("../models/User");
 const fs = require("fs").promises;
 
 const resolvers = {
@@ -105,6 +106,7 @@ const resolvers = {
       const updatedCount = countDoc.value;
 
       pubsub.publish(COUNT_UPDATED, { countUpdated: updatedCount });
+      sendMessage(updatedCount);
       return updatedCount;
     },
   },
