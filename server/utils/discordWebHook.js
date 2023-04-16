@@ -1,6 +1,6 @@
 const { Webhook } = require("discord-webhook-node");
 const webhook = new Webhook(
-  "https://discord.com/api/webhooks/1096982899452030986/g7QcEJ5ZEbMCpLA4gChyiNfrD7pAsLBE4CJUafawAIeqct2ZQqyma6YgFFVoeKS0ErWn"
+  "https://discord.com/api/webhooks/1096991826356998165/NAzedJKDWQpE397oOmnL4Vkfss0xfRvG23XM6PbnqBIRiXlSzCZczXzuk3gBwRDf8S-T"
 );
 
 const sendMessage = (message) => {
