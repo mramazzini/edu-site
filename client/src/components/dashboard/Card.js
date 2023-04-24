@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 const Card = ({ type, index, visible, onMouseEnter, onMouseLeave }) => {
   const [show, setShow] = useState([false, false, false, false, false, false]);
   const [animationDelay, setAnimationDelay] = useState(index);
   const images = [
     {
-      url: "https://img.icons8.com/color/240/null/html-5--v1.png",
-      title: "html",
+      url: 'https://img.icons8.com/color/240/null/html-5--v1.png',
+      title: 'html',
     },
     {
-      url: "https://img.icons8.com/color/240/null/css3.png",
-      title: "css",
+      url: 'https://img.icons8.com/color/240/null/css3.png',
+      title: 'css',
     },
     {
-      url: " https://img.icons8.com/color/240/null/javascript--v1.png",
-      title: "javascript",
+      url: ' https://img.icons8.com/color/240/null/javascript--v1.png',
+      title: 'javascript',
     },
     {
-      url: " https://img.icons8.com/fluency/240/null/node-js.png",
-      title: "node",
+      url: ' https://img.icons8.com/fluency/240/null/node-js.png',
+      title: 'node',
     },
     {
-      url: "https://img.icons8.com/color/240/null/mongodb.png ",
-      title: "mongodb",
+      url: 'https://img.icons8.com/color/240/null/mongodb.png ',
+      title: 'mongodb',
     },
     {
-      url: "https://img.icons8.com/ultraviolet/240/null/react--v1.png",
-      title: "react",
+      url: 'https://img.icons8.com/ultraviolet/240/null/react--v1.png',
+      title: 'react',
     },
   ];
   const [shouldRender, setShouldRender] = useState(false);
@@ -49,24 +49,25 @@ const Card = ({ type, index, visible, onMouseEnter, onMouseLeave }) => {
     }, 1000);
   }, [animationDelay]);
 
-  const cardClass = shouldRender ? "card card-fade-in" : "card";
+  const cardClass = shouldRender ? 'card card-fade-in' : 'card';
   return (
-    <div
+    <Link
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       className={cardClass}
       style={{
         animationDelay: `${animationDelay * 1000}ms`,
       }}
+      to={`/${type}`}
     >
-      <div className="dashboard-card-image-container">
+      <div className='dashboard-card-image-container'>
         <img
-          className="dashboard-card-image"
+          className='dashboard-card-image'
           src={images[index].url}
           alt={type}
         />
       </div>
-    </div>
+    </Link>
   );
 };
 export default Card;

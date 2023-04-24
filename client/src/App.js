@@ -1,48 +1,49 @@
-import Home from "./pages/Home";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import Info from "./pages/Info";
-import Dashboard from "./pages/Dashboard";
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navigate } from "react-router-dom";
-import Auth from "./components/utils/auth";
-import "./styles/App.css";
-import { WebSocketLink } from "@apollo/client/link/ws";
-import { split } from "@apollo/client/link/core";
-import { getMainDefinition } from "@apollo/client/utilities";
+import Home from './pages/Home';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Info from './pages/Info';
+import Dashboard from './pages/Dashboard';
+import HtmlNavigation from './pages/HtmlCourse/HtmlNavigation';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import Auth from './components/utils/auth';
+import './styles/App.css';
+import { WebSocketLink } from '@apollo/client/link/ws';
+import { split } from '@apollo/client/link/core';
+import { getMainDefinition } from '@apollo/client/utilities';
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 let httpLink;
 let wsURL;
 // Construct our main GraphQL API endpoint
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   httpLink = createHttpLink({
-    uri: "https://mern-edu-site.herokuapp.com/graphql",
+    uri: 'https://mern-edu-site.herokuapp.com/graphql',
     //uri: "/graphql",
   });
-  wsURL = "wss://mern-edu-site.herokuapp.com/graphql";
+  wsURL = 'wss://mern-edu-site.herokuapp.com/graphql';
 } else {
   httpLink = createHttpLink({
-    uri: "http://localhost:3001/graphql",
+    uri: 'http://localhost:3001/graphql',
     //uri: "/graphql",
   });
-  wsURL = "ws://localhost:3001/graphql";
+  wsURL = 'ws://localhost:3001/graphql';
 }
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = localStorage.getItem("id_token");
+  const token = localStorage.getItem('id_token');
   // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : "",
+      authorization: token ? `Bearer ${token}` : '',
     },
   };
 });
@@ -51,7 +52,7 @@ const wsLink = new WebSocketLink({
   options: {
     reconnect: true,
     connectionParams: {
-      authToken: localStorage.getItem("id_token"),
+      authToken: localStorage.getItem('id_token'),
     },
   },
 });
@@ -60,8 +61,8 @@ const link = split(
   ({ query }) => {
     const definition = getMainDefinition(query);
     return (
-      definition.kind === "OperationDefinition" &&
-      definition.operation === "subscription"
+      definition.kind === 'OperationDefinition' &&
+      definition.operation === 'subscription'
     );
   },
   wsLink,
@@ -84,10 +85,10 @@ const client = new ApolloClient({
 
 // surround a component with the `RequireAuth` tag to require authentication to access the route
 function RequireAuth({ children }) {
-  return Auth.loggedIn() === true ? children : <Navigate to="/login" replace />;
+  return Auth.loggedIn() === true ? children : <Navigate to='/login' replace />;
 }
 function App() {
-  const [currentForm, setCurrentForm] = useState("Login");
+  const [currentForm, setCurrentForm] = useState('Login');
 
   const toggleForm = (formName) => {
     setCurrentForm(formName);
@@ -95,22 +96,30 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <div className="container">
+      <div className='container'>
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path='/' element={<Home />} />
 
             <Route
-              path="/dashboard"
+              path='/dashboard'
               element={
                 <RequireAuth>
                   <Dashboard />
                 </RequireAuth>
               }
             />
-            <Route path="/info" element={<Info />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route
+              path='/html'
+              element={
+                <RequireAuth>
+                  <HtmlNavigation />
+                </RequireAuth>
+              }
+            />
+            <Route path='/info' element={<Info />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
           </Routes>
         </Router>
       </div>
