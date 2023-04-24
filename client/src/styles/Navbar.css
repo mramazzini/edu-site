@@ -17,6 +17,8 @@
   justify-content: space-between;
   align-items: center;
 }
+.nav-item a {
+}
 .nav-items {
   display: flex;
   justify-content: space-between;
@@ -55,9 +57,11 @@
 
 .left-nav li a {
   border-left: #1985a1 1px solid;
-
-  font: 400 1rem "Roboto", sans-serif;
   text-decoration: none;
+}
+.left-nav li a span {
+  font: 400 1rem 'Roboto', sans-serif;
+
   color: #fdfdff;
 
   padding: 0 10px;
@@ -68,7 +72,7 @@
   opacity: 1;
 }
 .right-nav li a {
-  font: 400 1rem "Roboto", sans-serif;
+  font: 400 1rem 'Roboto', sans-serif;
   text-decoration: none;
   color: #fdfdff;
 
@@ -81,7 +85,7 @@
   justify-content: center;
   align-items: center;
 
-  font: 400 1rem "Roboto", sans-serif;
+  font: 400 1rem 'Roboto', sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
 }

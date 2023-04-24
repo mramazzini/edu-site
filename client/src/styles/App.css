@@ -8,8 +8,8 @@ body {
 }
 
 :root {
-  --primary-color: #171e2a;
-  --secondary-color: #091120;
+  --primary-color: #091120;
+  --secondary-color: #171e2a;
   --white: #fdfdff;
   --accent: #129490;
 }

@@ -15,7 +15,11 @@ const NavItem = ({ item, index }) => {
         </div>
         {open ? <div className='arrow up' /> : <div className='arrow down' />}
       </div>
-      {open ? <div className='course-navigation-item-body'>asdf</div> : ''}
+      {open ? (
+        <div className='course-navigation-item-body'></div>
+      ) : (
+        <div className='course-navigation-item-body hidden'></div>
+      )}
     </div>
   );
 };
