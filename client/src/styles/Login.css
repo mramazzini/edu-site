@@ -4,7 +4,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #04080f;
+  background-color: var(--primary-color);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -131,7 +131,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #04080f;
+  background-color: var(--primary-color);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -155,7 +155,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #04080f;
+  background-color: var(--primary-color);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -210,7 +210,7 @@
   align-items: center;
 
   height: 50%;
-  background-color: #04080f;
+  background-color: var(--primary-color);
   flex-direction: row;
 }
 .login-image-active {

@@ -1,0 +1,126 @@
+.navigation-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.course-navigation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.course-navigation-title {
+  color: #fff;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 200px;
+}
+
+.course-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.course-navigation-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  background-color: var(--secondary-color);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 1px solid var(--accent);
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.course-navigation-item-title {
+  color: #fff;
+  font-size: 2.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.course-navigation-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  height: 100%;
+}
+.arrow {
+  border: solid #fff;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 6px;
+  transition: transform 0.2s ease-in-out;
+  margin-right: 10px;
+}
+.arrow.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.arrow.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.course-navigation-item-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 20px);
+  flex-direction: column;
+  background-color: var(--white);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+  border-radius: 5px;
+  height: 0px;
+  transition: height 0.5s ease-in-out;
+  animation: slideDown 0.5s ease-in-out 1 forwards;
+
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+@keyframes slideDown {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 300px;
+  }
+}

@@ -14,7 +14,7 @@
   height: 100vh;
   overflow: hidden;
   flex-direction: column;
-  background-color: #04080f;
+  background-color: var(--primary-color);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

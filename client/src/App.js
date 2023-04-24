@@ -3,7 +3,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Info from './pages/Info';
 import Dashboard from './pages/Dashboard';
-import HtmlNavigation from './pages/HtmlCourse/HtmlNavigation';
+import HtmlNavigation from './pages/Courses/HtmlNavigation';
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
