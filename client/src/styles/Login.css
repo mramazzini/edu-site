@@ -30,7 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1985a1;
+  background-color: var(--accent);
   text-shadow: 1px 1px 1px 1px #091120;
   color: #fff !important;
   height: 40px !important;
@@ -100,7 +100,7 @@
 .login-container {
   width: 30%;
   min-width: 200px;
-  border-right: 1px solid #1985a1;
+  border-right: 1px solid var(--accent2);
   background-color: #091120;
   height: 100%;
   display: flex;
@@ -144,7 +144,7 @@
   font-size: 4rem;
   font-weight: 700;
   text-decoration: underline;
-  text-decoration-color: #1985a1;
+  text-decoration-color: var(--accent2);
   text-decoration-thickness: 2px;
   text-underline-offset: 10px;
   margin: 0;
@@ -167,7 +167,7 @@
   width: 50%;
   height: 50px;
   border-radius: 10px;
-  background-color: #1985a1;
+  background-color: var(--accent);
   border: none;
   color: #fff;
   font-size: 1rem;

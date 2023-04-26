@@ -202,8 +202,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fdfdff;
-  color: #1985a1;
+  background-color: var(--accent);
+  color: #fdfdff;
   opacity: 1;
   height: 40px !important;
   border-color: rgb(0, 0, 0, 0);

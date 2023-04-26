@@ -5,7 +5,7 @@ import Card from "./Card";
 const DashboardContainer = () => {
   const [cardsVisible, setCardsVisible] = useState(false);
   const [hoveredName, setHoveredName] = useState("");
-  const [progress, setProgress] = useState(70);
+  const [progress, setProgress] = useState(10);
   useEffect(() => {
     setCardsVisible(true);
   }, []);
@@ -18,12 +18,12 @@ const DashboardContainer = () => {
       return hoveredName === "" ? (
         ""
       ) : (
-        <div className="dashboard-progress-bar">
+        <div className='dashboard-progress-bar'>
           <div className={`dashboard-progress-bar-header `}>
             Completion - {progress}%
           </div>
 
-          <div className="dashboard-progress-bar-cover">
+          <div className='dashboard-progress-bar-cover'>
             <div
               className={`dashboard-progress-bar-inner ${hoveredName}`}
               style={{ width: `${progress}%` }}
@@ -35,8 +35,8 @@ const DashboardContainer = () => {
     switch (hoveredName) {
       case "HTML":
         return (
-          <div className="dashboard-info-body">
-            <div className="dashboard-info-body-header">
+          <div className='dashboard-info-body'>
+            <div className='dashboard-info-body-header'>
               HTML is the standard markup language for creating Web pages.
             </div>
             {progressBar()}
@@ -45,8 +45,8 @@ const DashboardContainer = () => {
 
       case "CSS":
         return (
-          <div className="dashboard-info-body">
-            <div className="dashboard-info-body-header">
+          <div className='dashboard-info-body'>
+            <div className='dashboard-info-body-header'>
               CSS is the language we use to style an HTML document.
             </div>
             {progressBar()}
@@ -54,8 +54,8 @@ const DashboardContainer = () => {
         );
       case "javascript":
         return (
-          <div className="dashboard-info-body">
-            <div className="dashboard-info-body-header">
+          <div className='dashboard-info-body'>
+            <div className='dashboard-info-body-header'>
               JavaScript is the programming language of HTML and the Web.
             </div>
             {progressBar()}
@@ -63,8 +63,8 @@ const DashboardContainer = () => {
         );
       case "nodeJS":
         return (
-          <div className="dashboard-info-body">
-            <div className="dashboard-info-body-header">
+          <div className='dashboard-info-body'>
+            <div className='dashboard-info-body-header'>
               Node.js is a back-end environment that executes JavaScript code
               outside a web browser.
             </div>
@@ -73,8 +73,8 @@ const DashboardContainer = () => {
         );
       case "mongoDB":
         return (
-          <div className="dashboard-info-body">
-            <div className="dashboard-info-body-header">
+          <div className='dashboard-info-body'>
+            <div className='dashboard-info-body-header'>
               MongoDB is a database program intended to store data in JSON-like
               documents.
             </div>
@@ -84,8 +84,8 @@ const DashboardContainer = () => {
 
       case "react":
         return (
-          <div className="dashboard-info-body">
-            <div className="dashboard-info-body-header">
+          <div className='dashboard-info-body'>
+            <div className='dashboard-info-body-header'>
               React is a JavaScript library for building user interfaces.
             </div>
             {progressBar()}
@@ -93,8 +93,8 @@ const DashboardContainer = () => {
         );
       default:
         return (
-          <div className="dashboard-info-body">
-            <div className="dashboard-info-body-header">
+          <div className='dashboard-info-body'>
+            <div className='dashboard-info-body-header'>
               Hover over an Icon!
             </div>
             {progressBar()}
@@ -104,16 +104,16 @@ const DashboardContainer = () => {
   };
 
   return (
-    <div className="dashboard-body">
-      <div className="dashboard-info">
-        <header className="dashboard-info-header">
+    <div className='dashboard-body'>
+      <div className='dashboard-info'>
+        <header className='dashboard-info-header'>
           {hoveredName ? hoveredName : "Get Started!"}
           <div className={`dashboard-info-header-line ${hoveredName}`}></div>
         </header>
         {getInfoBody(hoveredName)}
       </div>
 
-      <div className="card-container">
+      <div className='card-container'>
         {["HTML", "CSS", "javascript", "nodeJS", "mongoDB", "react"].map(
           (type, index) => {
             return (
