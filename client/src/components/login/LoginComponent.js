@@ -1,12 +1,12 @@
-import react, { useState } from "react";
-import { Link } from "react-router-dom";
-import { LOGIN } from "../utils/mutations";
-import { useMutation } from "@apollo/client";
-import { useNavigate } from "react-router-dom";
-import Auth from "../utils/auth";
-import LoginGame from "./LoginGame";
+import react, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { LOGIN } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+import { useNavigate } from 'react-router-dom';
+import Auth from '../utils/auth';
+import LoginGame from './LoginGame';
 const LoginComponent = () => {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ email: '', password: '' });
   const [login] = useMutation(LOGIN);
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
@@ -22,7 +22,7 @@ const LoginComponent = () => {
       Auth.login(token);
 
       // Reload the page to update the state of the user
-      navigate("/dashboard");
+      navigate('/dashboard');
       await window.location.reload();
     } catch (e) {
       Auth.handleError(e);
@@ -37,34 +37,34 @@ const LoginComponent = () => {
     });
   };
   return (
-    <div className="login-body">
-      <div className="login-container">
+    <div className='login-body'>
+      <div className='login-container'>
         <h2>Login</h2>
-        <form className="login-form" onSubmit={handleSubmit}>
-          <label htmlFor="email">Email</label>
+        <form className='login-form' onSubmit={handleSubmit}>
+          <label htmlFor='email'>Email</label>
           <input
             onChange={handleChange}
-            type=""
-            placeholder="example@email.com"
-            id="email"
-            name="email"
+            type=''
+            placeholder='example@email.com'
+            id='email'
+            name='email'
           />
-          <label htmlFor="password">Password</label>
+          <label htmlFor='password'>Password</label>
           <input
             onChange={handleChange}
-            type="password"
-            placeholder="********"
-            id="password"
-            name="password"
+            type='password'
+            placeholder='********'
+            id='password'
+            name='password'
           />
-          <nav className="login-nav">
-            <Link to="/" className="home-button">
+          <nav className='login-nav'>
+            <Link to='/' className='home-button'>
               Go Back
             </Link>
-            <button type="submit">Login</button>
+            <button type='submit'>Login</button>
           </nav>
         </form>
-        <Link className="link-btn" to="/register">
+        <Link className='link-btn' to='/register'>
           Don't have an account? Register here!
         </Link>
       </div>

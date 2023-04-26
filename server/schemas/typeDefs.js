@@ -1,4 +1,4 @@
-const { gql } = require("apollo-server-express");
+const { gql } = require('apollo-server-express');
 
 // Check if it should be "Number" or "Int" for data type
 // Refer to 21-Mern (Module 24)
@@ -23,12 +23,26 @@ const typeDefs = gql`
     users: [User]
     user(id: String): User
     snakeLeaderBoard: [SnakePlayer]
+    getCourse(courseName: String): Course
     getLoginCount: Int
   }
   type Count {
     value: Int
   }
 
+  type Lesson {
+    name: String
+    description: String
+    sections: [Section]
+  }
+  type Section {
+    name: String
+    description: String
+  }
+  type Course {
+    name: String
+    lessons: [Lesson]
+  }
   type Mutation {
     addUser(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth

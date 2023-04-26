@@ -32,11 +32,6 @@
   }
 }
 
-/* Hide default scrollbar */
-::-webkit-scrollbar {
-  display: none;
-}
-
 .home-page {
   background-color: #091120;
   height: 100vh;

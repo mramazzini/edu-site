@@ -40,6 +40,28 @@ const resolvers = {
       }
       return countDoc.value;
     },
+    getCourse: async (parent, { courseName }) => {
+      let directoryPath;
+      if (process.env.NODE_ENV === "production") {
+        directoryPath = `server/courses/${courseName}.json`;
+      } else {
+        directoryPath = `./courses/${courseName}.json`;
+      }
+      let course = {
+        name: courseName,
+        lessons: [],
+      };
+
+      try {
+        const data = await fs.readFile(directoryPath, "utf8");
+        const lessons = JSON.parse(data).lessons;
+        course.lessons = lessons;
+        return course;
+      } catch (error) {
+        console.error(error);
+        return course;
+      }
+    },
   },
 
   Mutation: {

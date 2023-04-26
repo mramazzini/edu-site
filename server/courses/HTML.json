@@ -1,0 +1,128 @@
+{
+  "lessons": [
+    {
+      "name": "Setting up the environment",
+      "description": "You will learn how to set up your computer to begin creating HTML files.",
+      "sections": [
+        {
+          "name": "Download Visual Studio Code"
+        },
+        {
+          "name": "Download Google Chrome"
+        },
+        {
+          "name": "Create your first HTML file."
+        }
+      ]
+    },
+    {
+      "name": "Introduction to HTML",
+      "description": "You will learn the basics of HTML and how to create a simple HTML page using the HTML element tags.",
+      "sections": [
+        {
+          "name": "What is HTML?"
+        },
+        {
+          "name": "HTML Tags"
+        },
+        {
+          "name": "HTML Elements"
+        }
+      ]
+    },
+    {
+      "name": "Text Formatting",
+      "description": "You will learn how to format text in HTML utilizing various HTML tags.",
+      "sections": [
+        {
+          "name": "Headings"
+        },
+        {
+          "name": "Paragraphs"
+        },
+        {
+          "name": "Line Breaks"
+        }
+      ]
+    },
+    {
+      "name": "Lists",
+      "description": "You will learn how to create lists to organize your content.",
+      "sections": [
+        {
+          "name": "Ordered Lists"
+        },
+        {
+          "name": "Unordered Lists"
+        },
+        {
+          "name": "Nested Lists"
+        }
+      ]
+    },
+    {
+      "name": "Links and Images",
+      "description": "You will learn how to create links to other pages and how to add images to your page.",
+      "sections": [
+        {
+          "name": "What are attributes?"
+        },
+        {
+          "name": "The id and class attributes"
+        },
+        {
+          "name": "The href and src attributes"
+        },
+        {
+          "name": "The alt attribute"
+        }
+      ]
+    },
+    {
+      "name": "Basic Styling",
+      "description": "You will learn how to style your HTML page using the style attribute.",
+      "sections": [
+        {
+          "name": "The style attribute"
+        },
+        {
+          "name": "Color your text"
+        },
+        {
+          "name": "Background colors"
+        },
+        {
+          "name": "Text alignment"
+        }
+      ]
+    },
+
+    {
+      "name": "Forms",
+      "description": "You will learn how to create forms to collect data from your users.",
+      "sections": [
+        {
+          "name": "The form element"
+        },
+        {
+          "name": "The input element"
+        },
+        {
+          "name": "The textarea element"
+        },
+        {
+          "name": "The select element"
+        }
+      ]
+    },
+    {
+      "name": "Quiz",
+      "description": "Test your knowledge on what you have learned so far.",
+      "sections": [
+        {
+          "name": "Quiz"
+        }
+      ]
+    }
+  ]
+}

@@ -3,8 +3,8 @@ body {
   padding: 0;
 }
 * {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 :root {
@@ -12,4 +12,26 @@ body {
   --secondary-color: #171e2a;
   --white: #fdfdff;
   --accent: #129490;
+  --accent2: #c973fc;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+
+  color: var(--accent2);
+
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
 }

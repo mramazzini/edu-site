@@ -1,12 +1,8 @@
-import React from 'react';
-import CourseNavigation from '../../components/courses/CourseNavigation';
-import '../../styles/NavigationPage.css';
+import React from "react";
+import CourseNavigation from "../../components/courses/CourseNavigation";
+import "../../styles/NavigationPage.css";
 const HtmlNavigation = () => {
-  return (
-    <div className='navigation-page html'>
-      <CourseNavigation />
-    </div>
-  );
+  return <CourseNavigation type={"HTML"} />;
 };
 
 export default HtmlNavigation;

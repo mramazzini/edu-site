@@ -1,35 +1,40 @@
-import React from 'react';
-import NavItem from './NavItem';
-const CourseNavigation = ({ type }) => {
-  const data = [
-    'Introduction to HTML',
-    'Text Formatting',
-    'Lists',
-    'Links',
-    'Images',
-    'Tables',
-    'Forms',
-    'Frames',
-    'Colors',
-    'Fonts',
-    'CSS',
-    'JavaScript',
-    'Browser Support',
-    'Summary',
-    'Exercises',
-    'Quiz',
-  ];
+import React, { useState } from "react";
+import NavItem from "./NavItem";
+import { useQuery } from "@apollo/client";
+import { GET_COURSE } from "../utils/queries";
 
-  return (
-    <div className='course-navigation-container'>
-      <h1 className='course-navigation-title'>HTML Tutorial</h1>
-      <div className='course-navigation'>
-        {data.map((item, index) => (
-          <NavItem item={item} index={index} />
-        ))}
+const CourseNavigation = ({ type }) => {
+  const [activeTab, setActiveTab] = useState(-1);
+  const { loading, data, error } = useQuery(GET_COURSE, {
+    variables: { courseName: type },
+  });
+
+  if (loading) {
+    return <div>Loading...</div>;
+  } else if (error) {
+    return <div>error</div>;
+  } else {
+    return (
+      <div className='navigation-page html'>
+        <div className='course-navigation-container'>
+          <div className='course-navigation-title'>Courses</div>
+          <div className='course-navigation'>
+            {data.getCourse.lessons.map((item, index) => (
+              <NavItem
+                setActiveTab={setActiveTab}
+                key={index}
+                item={item}
+                index={index}
+                courseName={type}
+                activeTab={activeTab}
+              />
+            ))}
+          </div>
+        </div>
+        <div className='course-information-container'></div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default CourseNavigation;
