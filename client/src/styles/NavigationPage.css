@@ -40,7 +40,7 @@
 }
 
 .course-navigation-title {
-  color: #fff;
+  color: var(--white);
   font-size: 5vh;
   display: flex;
   justify-content: center;
@@ -65,8 +65,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow-y: scroll;
-  border-top: 1px solid var(--accent2);
-  border-bottom: 1px solid var(--accent2);
+  border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
 }
 .course-navigation-item {
   display: flex;
@@ -87,7 +87,7 @@
 }
 
 .course-navigation-item-title {
-  color: #fff;
+  color: var(--white);
   font-size: 2.5rem;
   font-weight: 1000;
   display: flex;
@@ -106,7 +106,7 @@
   cursor: pointer;
 }
 .arrow {
-  border: solid #fff;
+  border: solid var(--white);
   border-width: 0 4px 4px 0;
   display: inline-block;
   padding: 6px;
@@ -151,7 +151,7 @@
 }
 
 .course-navigation-item-section a {
-  color: var(--accent2);
+  color: var(--accent);
   font-size: 1.5rem;
   font-weight: 1000;
 

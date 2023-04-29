@@ -14,7 +14,21 @@
   height: 100vh;
   overflow: hidden;
   flex-direction: column;
-  background-color: var(--primary-color);
+  background-image: linear-gradient(
+    to right bottom,
+    #000d24,
+    #072547,
+    #0e3d6e,
+    #135797,
+    #1372c2,
+    #4386d6,
+    #639aea,
+    #7fafff,
+    #a8c1ff,
+    #c9d3ff,
+    #e5e8ff,
+    #fdfdff
+  );
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,8 +50,9 @@
   display: flex;
   height: 20%;
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: none;
   bottom: 0;
+  background-color: var(--primary-color);
 }
 .card {
   position: relative;
@@ -47,19 +62,19 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  box-shadow: 0px -2px 0px 2px rgba(0, 0, 0, 0.5);
+
   z-index: 2;
 
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   opacity: 0;
   transition: all 0.5s ease-in-out;
-  background-color: #091120;
+  background-color: var(--primary-color);
 }
 
 .card:hover {
   animation-name: bob;
-  box-shadow: 0px -2px 0px 2px var(--accent2);
+  box-shadow: 0px -2px 0px 2px var(--accent);
   animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -135,15 +150,15 @@
 .dashboard-info-header {
   font-size: 7rem;
   font-weight: 700;
-  color: #fff;
-  text-shadow: 1px 1px 1px 1px #091120;
+  color: var(--white);
+  text-shadow: 1px 1px 1px 1px var(--primary-color);
   text-transform: capitalize;
   margin-bottom: 20px;
 }
 .dashboard-info-header-line {
   width: 100%;
   height: 5px;
-  background-color: #129490;
+  background-color: var(--accent);
 }
 .dashboard-info-header .HTML {
   background-color: #ff6d00 !important;
@@ -167,7 +182,7 @@
   font-size: 1.5rem;
   font-weight: 700;
 
-  color: #fff;
+  color: var(--white);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -180,7 +195,7 @@
 .dashboard-info-body-header {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -203,7 +218,7 @@
 .dashboard-progress-bar-header {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--white);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -242,7 +257,7 @@
 .dashboard-progress-bar-cover {
   width: 100%;
   height: 20%;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

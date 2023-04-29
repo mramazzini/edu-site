@@ -4,7 +4,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,7 +23,7 @@
 .login-form input {
   background-color: rgb(0, 0, 0, 0.4);
   border: none;
-  color: #fff;
+  color: var(--white);
 }
 .login-form button,
 .login-form a {
@@ -31,14 +31,14 @@
   justify-content: center;
   align-items: center;
   background-color: var(--accent);
-  text-shadow: 1px 1px 1px 1px #091120;
-  color: #fff !important;
+  text-shadow: 1px 1px 1px 1px var(--primary-color);
+  color: var(--white) !important;
   height: 40px !important;
   border-left: none !important;
   border-radius: 10px;
 
   border: none;
-  box-shadow: 1px 1px 1px 1px #091120;
+  box-shadow: 1px 1px 1px 1px var(--primary-color);
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
@@ -54,11 +54,11 @@
   transition: all 0.3s ease;
 }
 .login-form label {
-  color: #fff;
-  text-shadow: 1px 1px 1px 1px #091120;
+  color: var(--white);
+  text-shadow: 1px 1px 1px 1px var(--primary-color);
 }
 .login-form label:hover {
-  color: #fff;
+  color: var(--white);
 }
 .login-form input {
   width: 100%;
@@ -69,7 +69,7 @@
   font-size: 1rem;
   font-weight: 700;
   transition: all 0.3s ease;
-  text-shadow: 1px 1px 1px 1px #091120;
+  text-shadow: 1px 1px 1px 1px var(--primary-color);
 }
 .login-nav {
   display: flex;
@@ -77,8 +77,8 @@
   align-items: center;
   width: 100%;
   margin-top: 20px;
-  background-color: #091120;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--white);
   text-align: center;
   font-size: 1rem;
   font-weight: 700;
@@ -95,19 +95,19 @@
 .login-form input {
   background-color: rgb(0, 0, 0, 0.4);
   border: none;
-  color: #fff;
+  color: var(--white);
 }
 .login-container {
   width: 30%;
   min-width: 200px;
-  border-right: 1px solid var(--accent2);
-  background-color: #091120;
+  border-right: 1px solid var(--accent);
+  background-color: var(--primary-color);
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: var(--white);
   text-align: center;
   font-size: 1rem;
   font-weight: 700;
@@ -116,10 +116,10 @@
 }
 .link-btn {
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
   margin-top: 20px;
   width: 70%;
-  text-shadow: 1px 1px 1px 1px #091120;
+  text-shadow: 1px 1px 1px 1px var(--primary-color);
 }
 .link-btn:hover {
   opacity: 0.8;
@@ -127,24 +127,22 @@
 }
 .login-game {
   width: 70%;
-  height: 90%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-color);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(var(--accent) 20%, var(--secondary-color));
+
   overflow: hidden;
   flex-direction: column;
 }
 .login-game h1 {
-  color: #fff;
-  text-shadow: 1px 1px 1px 1px #091120;
+  color: var(--white);
+  text-shadow: 1px 1px 1px 1px var(--primary-color);
   font-size: 4rem;
   font-weight: 700;
   text-decoration: underline;
-  text-decoration-color: var(--accent2);
+  text-decoration-color: var(--accent);
   text-decoration-thickness: 2px;
   text-underline-offset: 10px;
   margin: 0;
@@ -155,7 +153,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--primary-color);
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -169,7 +167,7 @@
   border-radius: 10px;
   background-color: var(--accent);
   border: none;
-  color: #fff;
+  color: var(--white);
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
@@ -178,15 +176,15 @@
 
   text-decoration: none;
 
-  text-shadow: 1px 1px 1px 1px #091120;
+  text-shadow: 1px 1px 1px 1px var(--primary-color);
 }
 .high-five-button:hover {
   opacity: 0.8;
   transition: all 0.3s ease;
 }
 .login-count {
-  color: #fff;
-  text-shadow: 1px 1px 1px 1px #091120;
+  color: var(--white);
+  text-shadow: 1px 1px 1px 1px var(--primary-color);
   font-size: 1rem;
   font-weight: 700;
   margin-top: 20px;
@@ -210,7 +208,7 @@
   align-items: center;
 
   height: 50%;
-  background-color: var(--primary-color);
+
   flex-direction: row;
 }
 .login-image-active {

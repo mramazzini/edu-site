@@ -8,22 +8,22 @@ body {
 }
 
 :root {
-  --primary-color: #091120;
-  --secondary-color: #171e2a;
+  --primary-color: #0a1b3b;
+  --secondary-color: #000d24;
   --white: #fdfdff;
-  --accent: #129490;
-  --accent2: #c973fc;
+  --accent: #0099ff;
+  --accent2: #09ff00;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 2px;
 
   color: var(--accent2);
 
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--accent2);
+  background-color: var(--white);
   border-radius: 10px;
 }
 
