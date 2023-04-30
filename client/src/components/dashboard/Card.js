@@ -64,7 +64,9 @@ const Card = ({
       style={{
         animationDelay: `${animationDelay * 1000}ms`,
       }}
-      to={`/${type}`}
+      to={{
+        pathname: `/${type}`,
+      }}
     >
       {available ? (
         ""

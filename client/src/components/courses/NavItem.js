@@ -34,7 +34,10 @@ const NavItem = ({ item, index, courseName, setActiveTab, activeTab }) => {
           <li className='course-navigation-item-section'>
             <Link
               key={index}
-              to={`/${courseName}/${section.name.replace(/\s+/g, "-")}`}
+              to={{
+                pathname: `/${courseName}/lesson`,
+                search: `?course=${index}-${i} `,
+              }}
             >
               {section.name}
             </Link>
@@ -42,9 +45,7 @@ const NavItem = ({ item, index, courseName, setActiveTab, activeTab }) => {
           </li>
         ))}
         <li className='course-navigation-item-section'>
-          <Link to={`/${courseName}/${item.name.replace(/\s+/g, "-")}/quiz`}>
-            Quiz
-          </Link>
+          <Link to={`/${courseName}/test`}>Test</Link>
           <div className='percentage-completion'>0%</div>
         </li>
       </ul>

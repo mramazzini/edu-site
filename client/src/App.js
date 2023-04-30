@@ -3,6 +3,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Info from "./pages/Info";
 import Dashboard from "./pages/Dashboard";
+import Course from "./pages/Courses/Course";
 import HtmlNavigation from "./pages/Courses/HtmlNavigation";
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -119,7 +120,7 @@ function App() {
                 </RequireAuth>
               }
             />
-
+            <Route path='/html/:lesson' element={<Course />} />
             <Route path='/info' element={<Info />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
