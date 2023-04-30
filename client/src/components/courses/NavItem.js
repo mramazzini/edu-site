@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
 const NavItem = ({ item, index, courseName, setActiveTab, activeTab }) => {
   const isActiveTab = activeTab === index;
+
   return (
     <div
       key={index}
@@ -36,8 +38,15 @@ const NavItem = ({ item, index, courseName, setActiveTab, activeTab }) => {
             >
               {section.name}
             </Link>
+            <div className='percentage-completion'>0%</div>
           </li>
         ))}
+        <li className='course-navigation-item-section'>
+          <Link to={`/${courseName}/${item.name.replace(/\s+/g, "-")}/quiz`}>
+            Quiz
+          </Link>
+          <div className='percentage-completion'>0%</div>
+        </li>
       </ul>
     </div>
   );

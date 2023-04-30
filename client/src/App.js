@@ -1,49 +1,51 @@
-import Home from './pages/Home';
-import Register from './pages/Register';
-import Login from './pages/Login';
-import Info from './pages/Info';
-import Dashboard from './pages/Dashboard';
-import HtmlNavigation from './pages/Courses/HtmlNavigation';
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
-import Auth from './components/utils/auth';
-import './styles/App.css';
-import { WebSocketLink } from '@apollo/client/link/ws';
-import { split } from '@apollo/client/link/core';
-import { getMainDefinition } from '@apollo/client/utilities';
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Info from "./pages/Info";
+import Dashboard from "./pages/Dashboard";
+import HtmlNavigation from "./pages/Courses/HtmlNavigation";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+import Auth from "./components/utils/auth";
+import "./styles/App.css";
+import { WebSocketLink } from "@apollo/client/link/ws";
+import { split } from "@apollo/client/link/core";
+import { getMainDefinition } from "@apollo/client/utilities";
+import { useQuery } from "@apollo/client";
+import { GET_COURSE } from "./components/utils/queries";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 let httpLink;
 let wsURL;
 // Construct our main GraphQL API endpoint
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   httpLink = createHttpLink({
-    uri: 'https://mern-edu-site.herokuapp.com/graphql',
+    uri: "https://mern-edu-site.herokuapp.com/graphql",
     //uri: "/graphql",
   });
-  wsURL = 'wss://mern-edu-site.herokuapp.com/graphql';
+  wsURL = "wss://mern-edu-site.herokuapp.com/graphql";
 } else {
   httpLink = createHttpLink({
-    uri: 'http://localhost:3001/graphql',
+    uri: "http://localhost:3001/graphql",
     //uri: "/graphql",
   });
-  wsURL = 'ws://localhost:3001/graphql';
+  wsURL = "ws://localhost:3001/graphql";
 }
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -52,7 +54,7 @@ const wsLink = new WebSocketLink({
   options: {
     reconnect: true,
     connectionParams: {
-      authToken: localStorage.getItem('id_token'),
+      authToken: localStorage.getItem("id_token"),
     },
   },
 });
@@ -61,8 +63,8 @@ const link = split(
   ({ query }) => {
     const definition = getMainDefinition(query);
     return (
-      definition.kind === 'OperationDefinition' &&
-      definition.operation === 'subscription'
+      definition.kind === "OperationDefinition" &&
+      definition.operation === "subscription"
     );
   },
   wsLink,
@@ -88,7 +90,7 @@ function RequireAuth({ children }) {
   return Auth.loggedIn() === true ? children : <Navigate to='/login' replace />;
 }
 function App() {
-  const [currentForm, setCurrentForm] = useState('Login');
+  const [currentForm, setCurrentForm] = useState("Login");
 
   const toggleForm = (formName) => {
     setCurrentForm(formName);
@@ -117,6 +119,7 @@ function App() {
                 </RequireAuth>
               }
             />
+
             <Route path='/info' element={<Info />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />

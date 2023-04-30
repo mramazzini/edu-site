@@ -5,7 +5,7 @@ import Card from "./Card";
 const DashboardContainer = () => {
   const [cardsVisible, setCardsVisible] = useState(false);
   const [hoveredName, setHoveredName] = useState("");
-  const [progress, setProgress] = useState(10);
+  const [progress, setProgress] = useState(0);
   useEffect(() => {
     setCardsVisible(true);
   }, []);
@@ -39,6 +39,7 @@ const DashboardContainer = () => {
             <div className='dashboard-info-body-header'>
               HTML is the standard markup language for creating Web pages.
             </div>
+
             {progressBar()}
           </div>
         );
@@ -48,6 +49,9 @@ const DashboardContainer = () => {
           <div className='dashboard-info-body'>
             <div className='dashboard-info-body-header'>
               CSS is the language we use to style an HTML document.
+              <br />
+              <br />
+              <div className='coming-soon'>Coming Soon!</div>
             </div>
             {progressBar()}
           </div>
@@ -57,6 +61,9 @@ const DashboardContainer = () => {
           <div className='dashboard-info-body'>
             <div className='dashboard-info-body-header'>
               JavaScript is the programming language of HTML and the Web.
+              <br />
+              <br />
+              <div className='coming-soon'>Coming Soon!</div>
             </div>
             {progressBar()}
           </div>
@@ -67,6 +74,9 @@ const DashboardContainer = () => {
             <div className='dashboard-info-body-header'>
               Node.js is a back-end environment that executes JavaScript code
               outside a web browser.
+              <br />
+              <br />
+              <div className='coming-soon'>Coming Soon!</div>
             </div>
             {progressBar()}
           </div>
@@ -77,6 +87,9 @@ const DashboardContainer = () => {
             <div className='dashboard-info-body-header'>
               MongoDB is a database program intended to store data in JSON-like
               documents.
+              <br />
+              <br />
+              <div className='coming-soon'>Coming Soon!</div>
             </div>
             {progressBar()}
           </div>
@@ -87,6 +100,9 @@ const DashboardContainer = () => {
           <div className='dashboard-info-body'>
             <div className='dashboard-info-body-header'>
               React is a JavaScript library for building user interfaces.
+              <br />
+              <br />
+              <div className='coming-soon'>Coming Soon!</div>
             </div>
             {progressBar()}
           </div>
@@ -124,6 +140,7 @@ const DashboardContainer = () => {
                 visible={cardsVisible}
                 onMouseEnter={() => handleCardHover(type)}
                 onMouseLeave={() => handleCardHover("")}
+                available={index === 0 ? true : false}
               />
             );
           }

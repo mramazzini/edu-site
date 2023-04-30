@@ -62,7 +62,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-
+  overflow: hidden;
   z-index: 2;
 
   border-top-left-radius: 10px;
@@ -81,8 +81,11 @@
   z-index: 3;
   height: 150%;
 }
+.card:hover .coming-soon-card-banner {
+  display: none;
+}
 
-.card:hover > * {
+.card:hover .dashboard-card-image {
   animation-name: wiggle;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -236,6 +239,31 @@
   align-content: flex-start;
   background-color: var(--accent);
 }
+.coming-soon-card-banner {
+  position: absolute;
+  width: 200%;
+  height: 50px;
+  background-color: red;
+  transform: rotate(-30deg);
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coming-soon {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--white);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  align-content: flex-start;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
 .dashboard-progress-bar-cover .HTML {
   background-color: #ff6d00 !important;
 }
@@ -271,6 +299,9 @@
     text-align: center;
     width: 90%;
   }
+  .dashboard-info-body {
+    text-align: center;
+  }
   .dashboard-info {
     display: flex;
     justify-content: center;
@@ -283,7 +314,9 @@
   }
 
   .dashboard-info-body-header {
+    align-items: center;
     text-align: center;
+    width: 100%;
   }
 
   .dashboard-progress-bar {

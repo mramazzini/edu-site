@@ -1,6 +1,7 @@
 {
   "lessons": [
     {
+      "id": 1,
       "name": "Setting up the environment",
       "description": "You will learn how to set up your computer to begin creating HTML files.",
       "sections": [
@@ -16,6 +17,7 @@
       ]
     },
     {
+      "id": 2,
       "name": "Introduction to HTML",
       "description": "You will learn the basics of HTML and how to create a simple HTML page using the HTML element tags.",
       "sections": [
@@ -31,6 +33,7 @@
       ]
     },
     {
+      "id": 3,
       "name": "Text Formatting",
       "description": "You will learn how to format text in HTML utilizing various HTML tags.",
       "sections": [
@@ -46,6 +49,7 @@
       ]
     },
     {
+      "id": 4,
       "name": "Lists",
       "description": "You will learn how to create lists to organize your content.",
       "sections": [
@@ -61,6 +65,7 @@
       ]
     },
     {
+      "id": 5,
       "name": "Links and Images",
       "description": "You will learn how to create links to other pages and how to add images to your page.",
       "sections": [
@@ -79,6 +84,7 @@
       ]
     },
     {
+      "id": 6,
       "name": "Basic Styling",
       "description": "You will learn how to style your HTML page using the style attribute.",
       "sections": [
@@ -98,6 +104,7 @@
     },
 
     {
+      "id": 7,
       "name": "Forms",
       "description": "You will learn how to create forms to collect data from your users.",
       "sections": [
@@ -116,13 +123,10 @@
       ]
     },
     {
-      "name": "Quiz",
+      "id": 8,
+      "name": "Test",
       "description": "Test your knowledge on what you have learned so far.",
-      "sections": [
-        {
-          "name": "Quiz"
-        }
-      ]
+      "sections": []
     }
   ]
 }
