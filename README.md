@@ -1,4 +1,4 @@
-# MERN Stack Educational Site (name needed)
+# MERN Stack Educational Site
 
 ## [Link to Site](https://mern-edu-site.herokuapp.com/)
 
